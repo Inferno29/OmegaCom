@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OmegaCom.ImagesToSend"
+             xmlns:local="clr-namespace:OmegaCom"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+
+        <local:BarCodeScanner></local:BarCodeScanner>
+        
+    </ContentPage.BindingContext>
+
+    <StackLayout x:Name="stacklayout">
+
+        <Label Text="Click on icons" HorizontalOptions="Center" Padding="0,10,0,10" TextColor="Black"></Label>
+
+        <Grid ColumnSpacing="5" RowSpacing="5" Padding="5,5,5,5">
+
+            <Grid.RowDefinitions Height="*"></Grid.RowDefinitions>
+
+            <ImageButton Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" HeightRequest="250" WidthRequest="250" x:Name="imageButton0" Source="{local:ImageRessource OmegaCom.Pictures.Omega.jpg}" Clicked="Button_Clicked"></ImageButton>
+            <ImageButton Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" HeightRequest="250" WidthRequest="250" x:Name="imageButton1" Source="{local:ImageRessource OmegaCom.Pictures.Omega.jpg}" Clicked="Button_Clicked1"></ImageButton>
+            <ImageButton Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent" HeightRequest="250" WidthRequest="250" x:Name="imageButton2" Source="{local:ImageRessource OmegaCom.Pictures.Omega.jpg}" Clicked="Button_Clicked2"></ImageButton>
+            <ImageButton Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" HeightRequest="250" WidthRequest="250" x:Name="imageButton3" Source="{local:ImageRessource OmegaCom.Pictures.Omega.jpg}" Clicked="Button_Clicked3"></ImageButton>
+            <ImageButton Grid.Row="2" Grid.Column="0" BackgroundColor="Transparent" HeightRequest="250" WidthRequest="250" x:Name="imageButton4" Source="{local:ImageRessource OmegaCom.Pictures.Omega.jpg}" Clicked="Button_Clicked4"></ImageButton>
+            <ImageButton Grid.Row="2" Grid.Column="1" BackgroundColor="Transparent" HeightRequest="250" WidthRequest="250" x:Name="imageButton5" Source="{local:ImageRessource OmegaCom.Pictures.Omega.jpg}" Clicked="Button_Clicked5"></ImageButton>
+            <ImageButton Grid.Row="3" Grid.Column="0" BackgroundColor="Transparent" HeightRequest="250" WidthRequest="250" x:Name="imageButton6" Source="{local:ImageRessource OmegaCom.Pictures.Omega.jpg}" Clicked="Button_Clicked6"></ImageButton>
+            <ImageButton Grid.Row="3" Grid.Column="1" BackgroundColor="Transparent" HeightRequest="250" WidthRequest="250" x:Name="imageButton7" Source="{local:ImageRessource OmegaCom.Pictures.Omega.jpg}" Clicked="Button_Clicked7"></ImageButton>
+
+           
+        </Grid>
+     
+        <Button x:Name="SendButton" Text="Send" BackgroundColor="Transparent" Padding="10,10,10,10" TextColor="Black" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" Clicked="Button_Clicked_Send"> </Button>
+          <Label TextColor="Black" x:Name="labellabel" Text="123" HorizontalOptions="Center" FontAttributes="Bold"></Label>
+       
+
+    </StackLayout>
+
+
+</ContentPage>

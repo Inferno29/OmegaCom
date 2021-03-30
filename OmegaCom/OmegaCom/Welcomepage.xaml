@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:OmegaCom"
+             
+             x:Class="OmegaCom.Welcomepage"
+             BackgroundColor="White">
+  
+            
+      
+
+
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center">
+       
+                <Image Source="{local:ImageRessource OmegaCom.Pictures.Omega.jpg}"></Image>
+
+
+        <Grid BackgroundColor="White">
+            <Button Padding="0,20,0,0" FontSize="18" BackgroundColor="White" TextColor="Black" Text="Scan" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" Clicked="Button_Clicked"></Button>
+           
+        </Grid>
+        
+    </StackLayout>
+    
+    
+    
+ 
+</ContentPage>
