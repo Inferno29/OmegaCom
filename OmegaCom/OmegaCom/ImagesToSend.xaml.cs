@@ -14,6 +14,7 @@ using System.IO.Compression;
 using System.Drawing;
 using Android.Graphics;
 using Bitmap = Android.Graphics.Bitmap;
+using Image = Xamarin.Forms.Image;
 
 namespace OmegaCom
 {
@@ -35,8 +36,7 @@ namespace OmegaCom
             string s = subject;
             Swap(s, ref sub);
             labellabel.Text = s;
-
-       
+          
            
         }
 
@@ -48,13 +48,13 @@ namespace OmegaCom
         async void Button_Clicked(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
+
             
-           
+
 
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 SaveToAlbum = true,
-                Directory = "ImagesZip",
                 Name = "image1.jpg",
                 CompressionQuality = 40
 
@@ -62,6 +62,7 @@ namespace OmegaCom
             
             imageButton0.Source = ImageSource.FromStream(() =>
             {
+                
                 var stream = file.GetStream();
                 //file.Dispose();
                 
@@ -70,16 +71,6 @@ namespace OmegaCom
             });
 
             imageList.Add(file.Path);
-
-            //byte[] imageArray = System.IO.File.ReadAllBytes(file.Path);
-            //Bitmap bitmap = BitmapFactory.DecodeByteArray(imageArray, 0, imageArray.Length);
-
-
-            //var imageMemoryStream = new MemoryStream(imageArray);
-            //System.Drawing.Image imagefromstream = System.Drawing.Image.FromStream(imageMemoryStream);
-
-            //imageList.Add(imagefromstream);
-
 
         }
 
@@ -92,7 +83,7 @@ namespace OmegaCom
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 SaveToAlbum = true,
-                Directory = "ImagesZip",
+               
                 Name = "image2.jpg",
                 CompressionQuality = 40
 
@@ -117,7 +108,7 @@ namespace OmegaCom
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 SaveToAlbum = true,
-                Directory = "ImagesZip",
+             
                 Name = "image3.jpg",
                 CompressionQuality = 40
 
@@ -141,7 +132,7 @@ namespace OmegaCom
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 SaveToAlbum = true,
-                Directory = "ImagesZip",
+                
                 Name = "image4.jpg",
                 CompressionQuality = 40
 
@@ -164,7 +155,7 @@ namespace OmegaCom
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 SaveToAlbum = true,
-                Directory = "ImagesZip",
+                
                 Name = "image5.jpg",
                 CompressionQuality = 40
 
@@ -187,7 +178,7 @@ namespace OmegaCom
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 SaveToAlbum = true,
-                Directory = "ImagesZip",
+          
                 Name = "image6.jpg",
                 CompressionQuality = 40
 
@@ -211,7 +202,7 @@ namespace OmegaCom
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 SaveToAlbum = true,
-                Directory = "ImagesZip",
+               
                 Name = "image7.jpg",
                 CompressionQuality = 40
 
@@ -235,7 +226,7 @@ namespace OmegaCom
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 SaveToAlbum = true,
-                Directory = "ImagesZip",
+               
                 Name = "image8.jpg",
                 CompressionQuality = 40
 
@@ -285,30 +276,30 @@ namespace OmegaCom
         }
 
 
-        public bool QuickZip(string[] filesToZip, string destinationZipFullPath)
-        {
-            try
-            {
-                // Delete existing zip file if exists
-                if (File.Exists(destinationZipFullPath))
-                    File.Delete(destinationZipFullPath);
+        //public bool QuickZip(string[] filesToZip, string destinationZipFullPath)
+        //{
+        //    try
+        //    {
+        //        // Delete existing zip file if exists
+        //        if (File.Exists(destinationZipFullPath))
+        //            File.Delete(destinationZipFullPath);
 
-                using (ZipArchive zip = ZipFile.Open(destinationZipFullPath, ZipArchiveMode.Create))
-                {
-                    foreach (var file in filesToZip)
-                    {
-                        zip.CreateEntryFromFile(file, System.IO.Path.GetFileName(file), CompressionLevel.Optimal);
-                    }
-                }
+        //        using (ZipArchive zip = ZipFile.Open(destinationZipFullPath, ZipArchiveMode.Create))
+        //        {
+        //            foreach (var file in filesToZip)
+        //            {
+        //                zip.CreateEntryFromFile(file, System.IO.Path.GetFileName(file), CompressionLevel.Optimal);
+        //            }
+        //        }
 
-                return File.Exists(destinationZipFullPath);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Exception: {e.Message}");
-                return false;
-            }
-        }
+        //        return File.Exists(destinationZipFullPath);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine($"Exception: {e.Message}");
+        //        return false;
+        //    }
+        //}
 
 
 
